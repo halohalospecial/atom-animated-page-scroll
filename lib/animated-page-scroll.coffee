@@ -31,7 +31,6 @@ module.exports = AnimatedPageScroll =
     @scrollPage -1
 
   pageDown: ->
-    console.log 'pageDown' # # #
     @scrollPage 1
 
   scrollPage: (direction) ->
