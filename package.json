@@ -2,7 +2,7 @@
   "name": "animated-page-scroll",
   "main": "./lib/animated-page-scroll",
   "version": "1.0.0",
-  "description": "Smooth-scrolling Page Up / Page Down for TextEditors.",
+  "description": "Smooth-scrolling TextEditor Page Up / Page Down.",
   "keywords": [
   ],
   "activationCommands": {
