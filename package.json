@@ -1,0 +1,18 @@
+{
+  "name": "animated-page-scroll",
+  "main": "./lib/animated-page-scroll",
+  "version": "1.0.0",
+  "description": "Smooth-scrolling Page Up / Page Down for TextEditors.",
+  "keywords": [
+  ],
+  "activationCommands": {
+  },
+  "repository": "https://github.com/halohalospecial/animated-page-scroll",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "gsap": "1.18.2"
+  }
+}

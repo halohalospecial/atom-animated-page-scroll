@@ -1,0 +1,3 @@
+'atom-workspace atom-text-editor':
+  'pageup': 'animated-page-scroll:page-up'
+  'pagedown': 'animated-page-scroll:page-down'
