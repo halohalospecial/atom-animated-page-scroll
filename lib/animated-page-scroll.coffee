@@ -15,8 +15,10 @@ module.exports = AnimatedPageScroll =
     @animations = {}
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'animated-page-scroll:page-up': => @pageUp()
-      'animated-page-scroll:page-down': => @pageDown()
+      'animated-page-scroll:page-up': => @scrollPage -1
+      'animated-page-scroll:page-down': => @scrollPage 1
+      'animated-page-scroll:page-up-peek': => @scrollPage -1, peeking: true
+      'animated-page-scroll:page-down-peek': => @scrollPage 1, peeking: true
 
   deactivate: ->
     @subscriptions.dispose()
@@ -27,13 +29,7 @@ module.exports = AnimatedPageScroll =
 
   serialize: ->
 
-  pageUp: ->
-    @scrollPage -1
-
-  pageDown: ->
-    @scrollPage 1
-
-  scrollPage: (direction) ->
+  scrollPage: (direction, peeking) ->
     editor = atom.workspace.getActiveTextEditor()
     # numRowsToScroll can be positive or negative depending on the direction.
     numRowsToScroll = (@animations[editor.id]?.numRowsToScroll || 0) + (editor.getRowsPerPage() * direction)
@@ -69,7 +65,8 @@ module.exports = AnimatedPageScroll =
 
           onComplete: =>
             @animations[editor.id].onDidChangeCursorPositionSubscription.dispose()
-            editor.moveDown @animations[editor.id].numRowsToScroll
+            unless peeking
+              editor.moveDown @animations[editor.id].numRowsToScroll
             delete @animations[editor.id]
 
   stopAnimation: (animation) ->
