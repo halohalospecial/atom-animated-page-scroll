@@ -2,13 +2,14 @@
   "name": "animated-page-scroll",
   "main": "./lib/animated-page-scroll",
   "version": "0.3.0",
-  "description": "Animated Page Up and Page Down.  Also, an option to scroll without moving the cursors.",
+  "description": "Smooth scrolling Page Up and Page Down.",
   "keywords": [
-    "scroll",
-    "scrolling",
     "pageup",
     "pagedown",
-    "animated"
+    "scroll",
+    "scrolling",
+    "animated",
+    "smooth"
   ],
   "activationCommands": {},
   "repository": "https://github.com/halohalospecial/atom-animated-page-scroll",
