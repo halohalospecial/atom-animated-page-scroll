@@ -1,7 +1,7 @@
 {
   "name": "animated-page-scroll",
   "main": "./lib/animated-page-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smooth scrolling Page Up and Page Down.",
   "keywords": [
     "pageup",
