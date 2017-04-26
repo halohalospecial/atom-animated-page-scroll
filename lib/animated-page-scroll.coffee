@@ -54,12 +54,13 @@ module.exports = AnimatedPageScroll =
           ease: Power2.easeOut
 
           onUpdate: =>
-            editorView.setScrollTop scroller.top
+            if editorView?
+              editorView.setScrollTop scroller.top
 
-            # Stop animation upon scrolling to the top or bottom.
-            animation = @animations[editor.id]
-            if (animation.numRowsToScroll < 0 && editorView.getScrollTop() <= 0) || (animation.numRowsToScroll > 0 && editorView.getScrollBottom() >= editor.getLineHeightInPixels() * editor.getScreenLineCount())
-              @stopAnimation animation
+              # Stop animation upon scrolling to the top or bottom.
+              animation = @animations[editor.id]
+              if (animation.numRowsToScroll < 0 && editorView.getScrollTop() <= 0) || (animation.numRowsToScroll > 0 && editorView.getScrollBottom() >= editor.getLineHeightInPixels() * editor.getScreenLineCount())
+                @stopAnimation animation
 
           onComplete: =>
             @animations[editor.id].onDidChangeCursorPositionSubscription.dispose()

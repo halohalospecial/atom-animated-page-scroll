@@ -1,11 +1,14 @@
+## 1.0.1
+* Fix crashing bug when changing tabs.
+
 ## 1.0.0
-* Removed `animated-page-scroll:page-up-peek` and `animated-page-scroll:page-down-peek`.
+* Remove `animated-page-scroll:page-up-peek` and `animated-page-scroll:page-down-peek`.
 
 ## 0.3.0
-* Added `animated-page-scroll:page-up-peek` and `animated-page-scroll:page-down-peek`.
+* Add `animated-page-scroll:page-up-peek` and `animated-page-scroll:page-down-peek`.
 
 ## 0.2.0
-* Added screenshot.
+* Add screenshot.
 
 ## 0.1.0 - First Release
 * Initial release.
