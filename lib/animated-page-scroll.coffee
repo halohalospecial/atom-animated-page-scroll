@@ -10,6 +10,13 @@ module.exports = AnimatedPageScroll =
       maximum: 1
       description: 'Scroll duration in seconds.'
       order: 1
+    scrollRows:
+      type: 'integer'
+      default: 0
+      minimum: 0
+      maximum: 100
+      description: 'Scroll number of rows (set 0 to use full page).'
+      order: 2
 
   activate: (state) ->
     @animations = {}
@@ -30,7 +37,7 @@ module.exports = AnimatedPageScroll =
   scrollPage: (direction) ->
     editor = atom.workspace.getActiveTextEditor()
     # numRowsToScroll can be positive or negative depending on the direction (-1 or 1).
-    numRowsToScroll = (@animations[editor.id]?.numRowsToScroll || 0) + (editor.getRowsPerPage() * direction)
+    numRowsToScroll = (@animations[editor.id]?.numRowsToScroll || 0) + ((@getScrollRows() || editor.getRowsPerPage()) * direction)
     targetScroll = {top: editor.getLineHeightInPixels() * (editor.getCursorScreenPosition().row - 2 + numRowsToScroll)}
 
     if @animations[editor.id]
@@ -72,3 +79,6 @@ module.exports = AnimatedPageScroll =
 
   getScrollDuration: ->
     atom.config.get('animated-page-scroll.scrollDuration')
+
+  getScrollRows: ->
+    atom.config.get('animated-page-scroll.scrollRows')
