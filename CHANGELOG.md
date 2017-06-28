@@ -1,3 +1,6 @@
+## 1.1.0
+* Allow user to choose number of rows to scroll.  Thanks @matejc!
+
 ## 1.0.1
 * Fix crashing bug when changing tabs.
 

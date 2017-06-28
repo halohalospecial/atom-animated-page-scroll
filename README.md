@@ -13,7 +13,7 @@ This package replaces the default keybindings of `pageup` and `pagedown` in text
 
 ### Settings
 
-You can change the Scroll Duration in the package settings.
+You can change the scroll duration and number of rows to scroll in the package settings.
 
 ### Screenshot
 
